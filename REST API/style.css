@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@200&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+  }
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 78px;
+    padding: 6px 14px;
+    background: #0909FF;
+    transition: 0.5s;
+}
+
+.sidebar.active{
+    width: 240px;
+    transition: 0.5s;
+}
+
+/* ---------------------------------------------------------------------------- */
+
+#navigation-button{
+    position: absolute;
+    color: #fff;
+    left: 50%;
+    top: 6px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.sidebar.active #navigation-button{
+    left: 90%;
+}
+
+/* --------------------------------------------------------------------------- */
+
+.sidebar ul{
+    margin-top: 70px;
+}
+
+.sidebar ul li{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 0px;
+    list-style: none;
+    line-height: 50px;
+}
+
+.sidebar ul li a{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: 0.5s;
+    white-space: nowrap;
+}
+
+.sidebar ul li a:hover{
+    color: #0909FF;
+    background: #fff;
+}
+
+.sidebar ul li i{
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.sidebar ul li a span{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.active ul li a span{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* --------------------------------------------------------------------------- */
+
+.logout{
+    position: relative;
+    top: 350px;
+}
+
+.logout i{
+    transform: rotate(-180deg);
+}
+
+/* ===================================================================== TOPBAR =========================================== */
+
+.main{
+    position: absolute;
+    width: calc(100% - 78px);
+    left: 78px;
+    min-height: 100vh;
+    background: rgba(218, 218, 218, 0.2);
+    transition: 0.5s;
+   padding-bottom: 10px;
+}  
+
+.main.active{
+    width: calc(100% - 240px);
+    left: 240px;
+    transition: 0.5s;
+   
+}  
+
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    background-color:#fff; 
+    box-shadow:  0 7px 25px rgba(0,0,0,0.1);
+}
+
+/* ===================================================================== SEARCH =========================================== */
+
+.search{
+    position: absolute;
+    left: 500px;
+    width: 400px;
+    margin: 0 5px;
+    transform: translateX(0px);
+    transition: 0.5s;
+}
+  
+.search-input:hover{
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background: #f8f8f8;
+    border: 1px solid #c6c6c6;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    color: #222;
+}
+
+.search label{
+    position: relative;
+    width: 100%;
+}
+
+.search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid #222;
+}
+
+.search label i{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2em;
+}
+
+/* ===================================================================== CARDS =========================================== */
+  
+.card{
+    display: flex;
+    width: 800px;
+    background-color: white;
+    border: solid 1px #e5e5e5;
+    padding: 4px;
+    box-shadow: 0 0 3px 3px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    position: relative;
+    top: 20px;
+    bottom: -20px;
+    left: 300px;
+    margin-bottom: 10px;
+    cursor:context-menu;
+    transform: translateX(0px);
+    transition: 0.5s;
+}
+
+.main.active .card{
+    transform: translateX(-80px);
+    transition: 0.5s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+.image{
+    width: 220px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center center;
+    border-top-left-radius: 5px;
+}
+
+.card-title{
+    left: 29.5%;
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.category{
+    position: absolute;
+    top: 10%;
+    left: 28%;
+    font-size: 20px;
+ }
+
+ .rates{
+    position: absolute;
+    top: 62%;
+    left: 30%;
+    font-size: 20px;
+ }
+ 
+.rates:hover {
+    color: rgba(0, 140, 255, 0.918);
+  }
+
+.reviews{
+    position: absolute;
+    top: 80%;
+    left: 30%;
+    font-size: 20px;
+ }
+ 
+.reviews:hover {
+    color: rgba(0, 140, 255, 0.918);
+  }
+  
+.card-location{
+   position: absolute;
+   color: rgba(0, 140, 255, 0.918);
+   top: 37%;
+   left: 30%;
+   font-size: 15px;
+   display: block;
+}
+
+.card-location:hover {
+    color: rgba(0, 0, 0, 0.9);
+  }
+  
+h2{
+    position: absolute;
+    text-indent: 5px;
+    margin: 25px 10px;
+ }
+
