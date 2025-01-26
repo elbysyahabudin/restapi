@@ -1,0 +1,185 @@
+    <Window.Resources>
+        <SolidColorBrush x:Key="PrimaryBlueColor" Color="#348EF6"/>
+        <SolidColorBrush x:Key="SecondaryBlueColor" Color="#EFF2FF"/>
+        <SolidColorBrush x:Key="PrimaryTextColor" Color="#FFFFFF"/>
+        <SolidColorBrush x:Key="SecondaryTextColor" Color="#BBC1D1"/>
+        <SolidColorBrush x:Key="PrimaryGrayColor" Color="#BBC1D1"/>
+        
+        <Style x:Key="tombolBiru" TargetType="Button">
+            <Setter Property="Background" Value="#007bff"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="0"
+                        CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#0056b3"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#004085"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="Gray"/>
+                                <Setter Property="Foreground" Value="LightGray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="tombolMerah" TargetType="Button">
+            <Setter Property="Background" Value="#dc3545"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="0"
+                        CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#c82333"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#bd2130"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyleGreen" TargetType="Button">
+            <Setter Property="Background" Value="Green"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="0"
+                        CornerRadius="5">
+                            <!-- Adjust the value as needed -->
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#4CAF50"/>
+                                <!-- Change this color as needed -->
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#4CAF50"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="TabItemStyle" TargetType="TabItem">
+            <!--<Setter Property="Background" Value="Transparent"/>-->
+            <Setter Property="Foreground" Value="{DynamicResource SecondaryTextColor}"/>
+            <!--<Setter Property="BorderThickness" Value="0"/>-->
+            <!--<Setter Property="BorderBrush" Value="Transparent"/>-->
+            <Setter Property="Margin" Value="5 0 5 0"/>
+            <Setter Property="Width" Value="150"/>
+            <!--<Setter Property="Padding" Value="10"/>-->
+            <Setter Property="FontWeight" Value="500"/>
+            <!--<Setter Property="VerticalAlignment" Value="Top"/>-->
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Grid SnapsToDevicePixels="True">
+                            <Border CornerRadius="5"
+                                    Background="{TemplateBinding Background}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    Margin="{TemplateBinding Margin}"/>
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              SnapsToDevicePixels="true"
+                                              RecognizesAccessKey="true"
+                                              Margin="10"
+                                              ContentSource="Header"
+                                              Focusable="False"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background"
+                                        Value="{DynamicResource SecondaryBlueColor}"/>
+                                <Setter Property="Foreground"
+                                        Value="{DynamicResource PrimaryGrayColor}"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background"
+                                        Value="{DynamicResource PrimaryBlueColor}"/>
+                                <Setter Property="Foreground"
+                                        Value="{DynamicResource PrimaryTextColor}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="Gray"/>
+                                <Setter Property="Foreground" Value="LightGray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="TabControlStyle" TargetType="TabControl">
+            <!--<Setter Property="Background" Value="Transparent"/>-->
+            <!--<Setter Property="BorderThickness" Value="0"/>-->
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <!--<Setter Property="Padding" Value="10"/>-->
+            <Setter Property="Margin" Value="0 7 0 0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabControl">
+                        <Grid SnapsToDevicePixels="True">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TabPanel Grid.Row="0"
+                                      Background="Transparent"
+                                      IsItemsHost="True"
+                                      HorizontalAlignment="Left"/>
+                            <!--Margin="10 10 10 10"/>-->
+                            <Border Grid.Row="1"
+                                    CornerRadius="5"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter ContentSource="SelectedContent"
+                                                  SnapsToDevicePixels="True"
+                                                  Margin="{TemplateBinding Padding}"/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Popup" x:Key="ModalPopupStyle">
+            <Setter Property="IsOpen" Value="False" />
+            <Setter Property="AllowsTransparency" Value="True" />
+            <Setter Property="Placement" Value="Center" />
+            <Setter Property="StaysOpen" Value="False" />
+            <Setter Property="Child">
+                <Setter.Value>
+                    <Grid>
+                        <Rectangle Fill="#80000000" />
+                    </Grid>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+    </Window.Resources>
