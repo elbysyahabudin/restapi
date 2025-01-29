@@ -4,3 +4,9 @@
 F4d1ll4h!"£
 *** Please be efficient with the resource ***
 
+MRI 10.1.128.41
+BNC 10.1.121.42
+DU 10.1.122.41
+RW 10.1.125.1
+BPR 10.1.123.41
+BST 10.1.124.42
